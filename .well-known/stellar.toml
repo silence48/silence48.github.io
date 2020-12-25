@@ -1,0 +1,29 @@
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+ACCOUNTS=[
+"GDUDV56OWZYQ7Y333NZU2VAO7JM5X5ORFCDOEHUPXVJZK325TXPND37I",
+]
+VERSION="2.0.0"
+
+[DOCUMENTATION]
+ORG_NAME="silence48"
+ORG_URL="https://www.domain.com"
+ORG_LOGO="https://silence48.github.io/image.jpg"
+ORG_DESCRIPTION="The silence48 org"
+ORG_PHYSICAL_ADDRESS="123 Sesame Street, New York, NY 12345, United States"
+
+[[PRINCIPALS]]
+name="Silence48"
+email="35656692+silence48@users.noreply.github.com"
+keybase="silence48"
+twitter="silence48"
+github="silence48"
+
+[[CURRENCIES]]
+code="silence48"
+issuer="GDUDV56OWZYQ7Y333NZU2VAO7JM5X5ORFCDOEHUPXVJZK325TXPND37I"
+display_decimals=8
+name="silence48"
+desc="The silence48 Token"
+conditions="This is test software"
+
