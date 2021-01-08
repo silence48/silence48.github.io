@@ -22,11 +22,11 @@ twitter="silence48"
 github="silence48"
 
 [[CURRENCIES]]
-code="silence48"
+code="silence"
 issuer="GDUDV56OWZYQ7Y333NZU2VAO7JM5X5ORFCDOEHUPXVJZK325TXPND37I"
 display_decimals=8
-name="silence48"
-desc="The silence48 Token"
+name="silence"
+desc="The silence Token"
 conditions="This is test software"
 SQ02_EASTER_EGG="Log into series 2 of Stellar Quest then visit quest.stellar.org/series2. Finally drag and drop your Stellar Quest series 2 badge PNG images onto the screen. Enjoy!"
 
