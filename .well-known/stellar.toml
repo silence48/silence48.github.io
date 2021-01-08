@@ -12,6 +12,7 @@ ORG_URL="https://www.domain.com"
 ORG_LOGO="https://silence48.github.io/image.jpg"
 ORG_DESCRIPTION="The silence48 org"
 ORG_PHYSICAL_ADDRESS="123 Sesame Street, New York, NY 12345, United States"
+SQ02_EASTER_EGG="Log into series 2 of Stellar Quest then visit quest.stellar.org/series2. Finally drag and drop your Stellar Quest series 2 badge PNG images onto the screen. Enjoy!"
 
 [[PRINCIPALS]]
 name="Silence48"
