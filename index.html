@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
-
+<html>
+  <head>
+    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    
+  </head>
+  <body>
+    
+  </body>
+</html>
+  
+  
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Functional Resume - Timothy Baker</title>
    <script type="text/javascript">
-  var onloadCallback = function() {
-    alert("grecaptcha is ready!");
-  };
-</script>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
- 
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfPGsYdAAAAAC7-xPzb1PIqv3EwDESn7b6lTDyR'
+        });
+      };
+    </script> 
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
   <style type="text/css">
     body {
@@ -26,11 +36,14 @@
 </head>
 
 <body>
-      <div class="g-recaptcha" data-sitekey="6LfPGsYdAAAAAC7-xPzb1PIqv3EwDESn7b6lTDyR"></div>
-
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-    async defer>
-</script>
+<form action="?" method="POST">
+      <div id="html_element"></div>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
   
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
