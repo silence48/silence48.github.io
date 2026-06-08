@@ -1,129 +1,436 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Timothy Baker - Builder / Founder</title>
-  <meta name="description" content="Timothy Baker - builder, founder, AI systems, stablecoins, distributed systems, security.">
+  <meta name="description"
+    content="Timothy Baker - builder, founder, AI systems, stablecoins, distributed systems, security.">
   <style>
     :root {
       --bg: #0b1020;
       --bg2: #111827;
-      --panel: rgba(255,255,255,.065);
-      --panel2: rgba(255,255,255,.04);
+      --panel: rgba(255, 255, 255, .065);
+      --panel2: rgba(255, 255, 255, .04);
       --text: #eef4ff;
       --muted: #b7c2d6;
-      --line: rgba(255,255,255,.14);
-      --chip: rgba(255,255,255,.09);
-      --chip-line: rgba(255,255,255,.16);
+      --line: rgba(255, 255, 255, .14);
+      --chip: rgba(255, 255, 255, .09);
+      --chip-line: rgba(255, 255, 255, .16);
       --accent: #8fd3ff;
       --accent2: #9ff0d0;
-      --shadow: 0 22px 65px rgba(0,0,0,.24);
+      --shadow: 0 22px 65px rgba(0, 0, 0, .24);
       --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       color: var(--text);
       font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(circle at 14% 0%, rgba(143,211,255,.26), transparent 34rem),
-        radial-gradient(circle at 88% 10%, rgba(159,240,208,.14), transparent 30rem),
-        radial-gradient(circle at 50% 90%, rgba(112,96,255,.12), transparent 34rem),
+        radial-gradient(circle at 14% 0%, rgba(143, 211, 255, .26), transparent 34rem),
+        radial-gradient(circle at 88% 10%, rgba(159, 240, 208, .14), transparent 30rem),
+        radial-gradient(circle at 50% 90%, rgba(112, 96, 255, .12), transparent 34rem),
         linear-gradient(180deg, var(--bg) 0%, #0e172a 46%, var(--bg2) 100%);
       min-height: 100vh;
     }
 
-    a { color: inherit; text-decoration: none; }
-    a:hover { color: var(--accent); }
-    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
+    }
 
     header {
       position: sticky;
       top: 0;
       z-index: 20;
       backdrop-filter: blur(16px);
-      background: rgba(11,16,32,.76);
+      background: rgba(11, 16, 32, .76);
       border-bottom: 1px solid var(--line);
     }
-    .nav { height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { font-weight: 850; letter-spacing: -.03em; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 14px; }
 
-    main { padding-bottom: 76px; }
-    .hero { padding: 76px 0 38px; }
-    .eyebrow { color: var(--accent2); font-size: 12px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
-    h1 { margin: 8px 0 14px; font-size: clamp(35px, 5vw, 52px); line-height: .96; letter-spacing: -.055em; }
-    .lede { max-width: 940px; margin: 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); line-height: 1.38; }
-    .lede strong { color: var(--text); }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--line); border-radius: 999px; padding: 0 14px; background: rgba(255,255,255,.06); font-weight: 750; font-size: 14px; }
-    .btn.primary { background: var(--text); color: var(--bg); border-color: transparent; }
+    .nav {
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-    .proof-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 34px; }
-    .proof { border: 1px solid var(--line); border-radius: 20px; padding: 16px; background: linear-gradient(180deg, var(--panel), var(--panel2)); box-shadow: var(--shadow); }
-    .proof b { display: block; font-size: 18px; letter-spacing: -.025em; }
-    .proof span { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .brand {
+      font-weight: 850;
+      letter-spacing: -.03em;
+    }
 
-    section { padding: 34px 0; }
-    .section-head { display: grid; grid-template-columns: 300px minmax(0,1fr); gap: 26px; align-items: start; margin-bottom: 18px; }
-    h2 { margin: 0; font-size: clamp(29px, 3vw, 39px); line-height: 1.02; letter-spacing: -.055em; }
-    .section-note { margin: 0; color: var(--muted); }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-    .card { border: 1px solid var(--line); border-radius: 23px; background: linear-gradient(180deg, var(--panel), var(--panel2)); box-shadow: var(--shadow); }
-    .timeline { padding: 4px 18px; }
-    .role { display: grid; grid-template-columns: 255px minmax(0,1fr); gap: 20px; border-top: 1px solid var(--line); padding: 18px 0; }
-    .role:first-child { border-top: 0; }
-    .when { color: var(--muted); font-size: 13px; }
-    .when b { display: block; color: var(--text); font-size: 14px; margin-bottom: 2px; }
-    .role h3 { margin: 0 0 7px; font-size: 19px; letter-spacing: -.026em; }
-    .role p { margin: 0; color: var(--muted); }
-    .role p + p { margin-top: 9px; }
+    main {
+      padding-bottom: 76px;
+    }
 
-    .system-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
-    .system { padding: 18px; }
-    .system .meta { color: var(--accent2); font-size: 12px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
-    .system h3 { margin: 6px 0 8px; font-size: 19px; letter-spacing: -.026em; }
-    .system p { margin: 0; color: var(--muted); }
+    .hero {
+      padding: 76px 0 38px;
+    }
 
-    .stack-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
-    .stack-card { min-height: 212px; padding: 24px 22px; }
-    .stack-card h3 { margin: 0 0 14px; font-size: 20px; letter-spacing: -.035em; }
-    .chips { display: flex; flex-wrap: wrap; gap: 10px 9px; }
-    .chip { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--chip-line); background: var(--chip); color: var(--muted); font-size: 13px; white-space: nowrap; }
-    .stack-card p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.52; }
+    .eyebrow {
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .contact-card { padding: 20px; }
-    .contact-card p { margin: 0; color: var(--muted); }
-    .contact-card strong { color: var(--text); }
+    h1 {
+      margin: 8px 0 14px;
+      font-size: clamp(35px, 5vw, 52px);
+      line-height: .96;
+      letter-spacing: -.055em;
+    }
 
-    footer { padding: 28px 0 42px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+    .lede {
+      max-width: 940px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.38;
+    }
+
+    .lede strong {
+      color: var(--text);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 14px;
+      background: rgba(255, 255, 255, .06);
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .btn.primary {
+      background: var(--text);
+      color: var(--bg);
+      border-color: transparent;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .proof {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 16px;
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      box-shadow: var(--shadow);
+    }
+
+    .proof b {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -.025em;
+    }
+
+    .proof span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(29px, 3vw, 39px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      box-shadow: var(--shadow);
+    }
+
+    .timeline {
+      padding: 4px 18px;
+    }
+
+    .role {
+      display: grid;
+      grid-template-columns: 255px minmax(0, 1fr);
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0;
+    }
+
+    .role:first-child {
+      border-top: 0;
+    }
+
+    .when {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .when b {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .role h3 {
+      margin: 0 0 7px;
+      font-size: 19px;
+      letter-spacing: -.026em;
+    }
+
+    .role p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .role p+p {
+      margin-top: 9px;
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .system {
+      padding: 18px;
+    }
+
+    .system .meta {
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .system h3 {
+      margin: 6px 0 8px;
+      font-size: 19px;
+      letter-spacing: -.026em;
+    }
+
+    .system p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stack-card {
+      min-height: 212px;
+      padding: 24px 22px;
+    }
+
+    .stack-card h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: -.035em;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 9px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid var(--chip-line);
+      background: var(--chip);
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .stack-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.52;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .contact-card {
+      padding: 20px;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact-card strong {
+      color: var(--text);
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
 
     @media (max-width: 940px) {
-      .proof-strip, .stack-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .section-head { grid-template-columns: 1fr; }
+
+      .proof-strip,
+      .stack-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 760px) {
-      .wrap { width: min(var(--max), calc(100% - 30px)); }
-      .nav-links { display: none; }
-      .hero { padding-top: 54px; }
-      .proof-strip, .system-grid, .stack-grid, .contact-grid, .role { grid-template-columns: 1fr; }
-      .stack-card { min-height: auto; }
+      .wrap {
+        width: min(var(--max), calc(100% - 30px));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .proof-strip,
+      .system-grid,
+      .stack-grid,
+      .contact-grid,
+      .role {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-card {
+        min-height: auto;
+      }
     }
 
     @media print {
-      header, .cta-row { display: none; }
-      body { background: white; color: #111827; }
-      .wrap { width: auto; margin: 0; }
-      .card, .proof { box-shadow: none; background: white; border-color: #d7e1ea; }
-      .lede, .section-note, .role p, .system p, .stack-card p, .when, .contact-card p, .chip, .proof span { color: #374151; }
-      .chip { border-color: #d7e1ea; background: #f8fafc; }
+
+      header,
+      .cta-row {
+        display: none;
+      }
+
+      body {
+        background: white;
+        color: #111827;
+      }
+
+      .wrap {
+        width: auto;
+        margin: 0;
+      }
+
+      .card,
+      .proof {
+        box-shadow: none;
+        background: white;
+        border-color: #d7e1ea;
+      }
+
+      .lede,
+      .section-note,
+      .role p,
+      .system p,
+      .stack-card p,
+      .when,
+      .contact-card p,
+      .chip,
+      .proof span {
+        color: #374151;
+      }
+
+      .chip {
+        border-color: #d7e1ea;
+        background: #f8fafc;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap nav">
@@ -141,19 +448,27 @@
     <div class="wrap hero">
       <div class="eyebrow">AI - Stablecoins - Distributed Systems - Security</div>
       <h1>Builder / Founder</h1>
-      <p class="lede">I am a senior technical builder and founder/operator with a long infrastructure and information security background, now focused on <strong>AI systems, stablecoin infrastructure, onchain intelligence, community operations, and business-facing software</strong>. The useful work is usually not the demo. It is the evidence layer, the queue, the indexer, the scoring model, the audit trail, and the product judgment that keeps the whole thing from becoming another black box.</p>
+      <p class="lede">I am a polyglot solutions architect, builder and founder/operator with a long infrastructure and
+        information
+        security background, now focused on <strong>AI systems, stablecoin infrastructure, onchain intelligence,
+          community operations, and business-facing software</strong>. The useful work is usually not the demo. It is
+        the evidence layer, the queue, the indexer, the scoring model, the audit trail, and the product judgment that
+        keeps the whole thing from becoming another black box.</p>
       <div class="cta-row">
         <a class="btn primary" href="mailto:tim@bathcabinet.us">Email me</a>
         <a class="btn" href="https://github.com/silence48">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/tim4802">LinkedIn</a>
-        <a class="btn" href="https://stellaratlas.io">StellarAtlas</a>
         <a class="btn" href="./timothy_baker_resume_clean_v10.pdf">Resume PDF</a>
       </div>
       <div class="proof-strip" aria-label="Highlights">
-        <div class="proof"><b>AI systems</b><span>Agents, RAG/context graphs, vector retrieval, scoring/evaluation, MCP/API surfaces, operator workflows.</span></div>
-        <div class="proof"><b>Stablecoins</b><span>USDC context, Arc/EVM, Stellar/Soroban, DeFi analytics, smart contracts, indexers.</span></div>
-        <div class="proof"><b>Community + business</b><span>Builder feedback, moderation intelligence, KPI reporting, founder/operator work, client-facing judgment.</span></div>
-        <div class="proof"><b>Infra depth</b><span>Security, networks, identity, cloud, MSP operations, distributed compute, storage, automation.</span></div>
+        <div class="proof"><b>AI systems</b><span>Agents, RAG/context graphs, vector retrieval, scoring/evaluation,
+            MCP/API surfaces, operator workflows.</span></div>
+        <div class="proof"><b>Stablecoins</b><span>USDC context, Arc/EVM, Stellar/Soroban, DeFi analytics, smart
+            contracts, indexers.</span></div>
+        <div class="proof"><b>Community + business</b><span>Builder feedback, moderation intelligence, KPI reporting,
+            founder/operator work, client-facing judgment.</span></div>
+        <div class="proof"><b>Infra depth</b><span>Security, networks, identity, cloud, MSP operations, distributed
+            compute, storage, automation.</span></div>
       </div>
     </div>
 
@@ -161,73 +476,126 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Experience</h2>
-          <p class="section-note">The title on paper does not tell the whole story. The recent work is hands-on systems work around AI, community operations, product feedback, business intelligence, and blockchain data.</p>
+          <p class="section-note">The title on paper does not tell the whole story. The recent work is hands-on systems
+            work around AI, community operations, product feedback, business intelligence, and blockchain data.</p>
         </div>
         <div class="timeline card">
           <article class="role">
             <div class="when"><b>Circle Internet Financial</b>Lead Community Manager<br>2025 - present</div>
             <div>
               <h3>Internal AI systems for community and builder operations</h3>
-              <p>Build AI systems for community and builder operations: trust/abuse intelligence, feedback analysis, onchain builder and project tracking, KPI reporting, and agent-accessible knowledge. Details are intentionally generalized; the shape is hands-on systems work.</p>
-              <p>Designed graph/evidence models, retrieval and scoring workflows, permissions, background jobs, review queues, dry-run controls, APIs/MCP surfaces, and audit logs around operator decisions. Work sits between community operations, product/business intelligence, and stablecoin/blockchain systems: useful because teams can inspect the evidence, not just read a generated answer.</p>
+              <p>Build AI systems for community and builder operations: trust/abuse intelligence, feedback analysis,
+                onchain builder and project tracking, KPI reporting, and agent-accessible knowledge. Details are
+                intentionally generalized; the shape is hands-on systems work.</p>
+              <p>Designed graph/evidence models, retrieval and scoring workflows, permissions, background jobs, review
+                queues, dry-run controls, APIs/MCP surfaces, and audit logs around operator decisions. Work sits between
+                community operations, product/business intelligence, and stablecoin/blockchain systems: useful because
+                teams can inspect the evidence, not just read a generated answer.</p>
             </div>
           </article>
           <article class="role">
             <div class="when"><b>Hoops Finance</b>Chief Technology Officer<br>2024 - present</div>
             <div>
               <h3>Stellar/Soroban DeFi analytics and protocol architecture</h3>
-              <p>Building a DeFi and investment-intelligence startup around Stellar/Soroban liquidity analytics: LP risk, TVL, swap volume, fees, APR, routing, APIs, and user-facing decision support. Role crosses protocol architecture, Rust/Soroban, TypeScript, indexing/backend services, smart-contract patterns, technical diligence, business model work, and product strategy.</p>
+              <p>Building a DeFi and investment-intelligence startup around Stellar/Soroban liquidity analytics: LP
+                risk, TVL, swap volume, fees, APR, routing, APIs, and user-facing decision support. Role crosses
+                protocol architecture, Rust/Soroban, TypeScript, indexing/backend services, smart-contract patterns,
+                technical diligence, business model work, and product strategy.</p>
             </div>
           </article>
           <article class="role">
-            <div class="when"><b>Stellar ecosystem / SDF / SCF</b>Startup mentor + tooling contributor<br>2023 - present</div>
+            <div class="when"><b>Stellar Development Foundation</b>Startup mentor + tooling contributor<br>2022 -
+              present</div>
             <div>
               <h3>Mentoring, governance tooling, and StellarAtlas</h3>
-              <p>Mentor teams on Soroban contracts, DeFi architecture, documentation, security tradeoffs, and turning rough protocol ideas into software people can ship. Built and supported community/governance tooling around Discord/GitHub connectors, reputation and role automation, member nomination support, voting-related workflows, indexers, documentation, and ecosystem data. Run StellarAtlas.io.</p>
+              <p>Mentor teams on Soroban contracts, DeFi architecture, documentation, security tradeoffs, and turning
+                rough protocol ideas into software people can ship. Built and supported community/governance tooling
+                around Discord/GitHub connectors, reputation and role automation, member nomination support,
+                voting-related workflows, indexers, documentation, and ecosystem data. Run StellarAtlas.io.</p>
             </div>
           </article>
           <article class="role">
             <div class="when"><b>OrbitCDP</b>Consulting architect<br>2023 - present</div>
             <div>
               <h3>Stablecoin/CDP architecture on Stellar/Soroban</h3>
-              <p>Advise on Stellar/Soroban stablecoin/CDP architecture, Rust/Soroban code quality, integration design, documentation, and security-sensitive implementation tradeoffs.</p>
+              <p>Advise on Stellar/Soroban stablecoin/CDP architecture, Rust/Soroban code quality, integration design,
+                documentation, and security-sensitive implementation tradeoffs.</p>
             </div>
           </article>
           <article class="role">
-            <div class="when"><b>Avalan LLC</b>Principal consultant / owner<br>2009 - present</div>
+            <div class="when"><b>Avalan Systems / Avalan LLC</b>Principal consultant / owner<br>2009 - present</div>
             <div>
               <h3>Managed services, security, infrastructure, automation, and custom software</h3>
-              <p>Own and operate a managed-services and software consulting company supporting SMB and enterprise clients across network engineering, information security, identity, firewalls, VPN, wireless, cloud/hybrid migration, monitoring, automation, and custom application work.</p>
-              <p>Designed hybrid cloud/datacenter migrations, multi-site VPN and Azure connectivity, firewall segmentation and Fortigate VDOMs, F5 SSL inspection/orchestration, Cisco network deployments, SSO/RADIUS/RSA SecurID patterns, and network health dashboards. Built scripts and web tools for network administration, system operations, monitoring, reporting, client risk/vulnerability assessment, and reduced manual support work. Led client relationships, project scoping, vendor coordination, support operations, and technology planning.</p>
+              <p>Own and operate a managed-services and software consulting company supporting SMB and enterprise
+                clients across network engineering, information security, identity, firewalls, VPN, wireless,
+                cloud/hybrid migration, monitoring, automation, and custom application work.</p>
+              <p>Designed hybrid cloud/datacenter migrations, multi-site VPN and Azure connectivity, firewall
+                segmentation and Fortigate VDOMs, F5 SSL inspection/orchestration, Cisco network deployments,
+                SSO/RADIUS/RSA SecurID patterns, and network health dashboards. Built scripts and web tools for network
+                administration, system operations, monitoring, reporting, client risk/vulnerability assessment, and
+                reduced manual support work. Led client relationships, project scoping, vendor coordination, support
+                operations, and technology planning.</p>
+              <p>Clients sized from small founder led businesses to large enterprises, focused mainly on medium to large
+                business. Clients include companies such as Ace Hardware, NCR (National Cash Register), First Data,
+                Marathon Oil, Circle Internet</p>
             </div>
           </article>
           <article class="role">
-            <div class="when"><b>Kings Distributed Systems Ltd.</b>Software development / network security<br>2017 - 2019</div>
+            <div class="when"><b>Kings Distributed Systems Ltd.</b>Software development / network security<br>2017 -
+              2019</div>
             <div>
               <h3>Distributed compute software and security</h3>
-              <p>Built and secured DCP/distributed-compute software in a startup environment, using C++, JavaScript, and V8 to distribute compute-intensive work to browser-capable devices. Worked across security strategy, intelligent-agent concepts for malicious code detection, attack-surface review, automated deployment/testing, and scripting in Python/Ruby.</p>
-              <p>Distributed compute operations foundation sits here, not as the headline: high-density GPU/ASIC compute and storage, custom cooling, orchestration, monitoring, remote management, and systems that had to survive real-world failure modes.</p>
+              <p>Built and secured DCP/distributed-compute software in a startup environment, using C++, JavaScript, and
+                V8 to distribute compute-intensive work to browser-capable devices. Worked across security strategy,
+                intelligent-agent concepts for malicious code detection, attack-surface review, automated
+                deployment/testing, and scripting in Python/JS.</p>
             </div>
           </article>
           <article class="role">
             <div class="when"><b>FantasyGold</b>Blockchain Developer<br>2016 - 2018</div>
-            <div><h3>Early blockchain/Web3 development</h3><p>Worked across wallets, protocol mechanics, infrastructure, operations, and community-facing crypto systems.</p></div>
+            <div>
+              <h3>Early blockchain/Web3 development</h3>
+              <p>Worked across wallets, protocol mechanics, infrastructure, operations, and community-facing crypto
+                systems.</p>
+            </div>
           </article>
           <article class="role">
-            <div class="when"><b>Distinct Advantage Kitchen &amp; Bath</b>IT Manager / business partner / co-founder<br>2010 - 2017</div>
-            <div><h3>E-commerce, ERP, custom APIs, and sales automation</h3><p>Built e-commerce, ERP/catalog integrations, ordering automation, custom APIs, product data systems, and multi-channel sales tooling across web, database, and business operations.</p></div>
+            <div class="when"><b>Distinct Advantage Kitchen &amp; Bath</b>IT Manager / business partner /
+              co-founder<br>2010 - 2017</div>
+            <div>
+              <h3>E-commerce, ERP, custom APIs, and sales automation</h3>
+              <p>Built e-commerce, ERP/catalog integrations, ordering automation, custom APIs, product data systems, and
+                multi-channel sales tooling across web, database, and business operations.</p>
+            </div>
           </article>
           <article class="role">
             <div class="when"><b>Systems Junction</b>Director of Operations, US<br>2010 - 2015</div>
-            <div><h3>Business development and client operations</h3><p>Business development, account/client management, project management, web/internet marketing advisory, and operational support.</p></div>
+            <div>
+              <h3>Business development and client operations</h3>
+              <p>Business development, account/client management, project management, web/internet marketing advisory,
+                and operational support.</p>
+            </div>
           </article>
           <article class="role">
             <div class="when"><b>Xact NetworX</b>Sr. Network Engineer / Business Partner<br>1999 - 2008</div>
-            <div><h3>Network/security engineering and business operations</h3><p>Network/security engineering and business operations for clients across NW Ohio and SE Michigan: servers, routers, switches, VoIP, datacenter work, disaster recovery, Active Directory migrations, and custom database applications. Hired/trained staff, managed operations/accounting, and delivered technology projects for SMB clients.</p></div>
+            <div>
+              <h3>Network/security engineering and business operations</h3>
+              <p>Built one of the first cloud based data backup solutions utilizing high bandwidth oc48 colocations and
+                multi terabyte storage arrays.</p>
+              <p>Network/security engineering and business operations for clients across NW Ohio and SE Michigan:
+                servers, routers, switches, VoIP, datacenter work, disaster recovery, Active Directory migrations, and
+                custom database applications. Hired/trained staff, managed operations/accounting, and delivered
+                technology projects for SMB clients.</p>
+            </div>
           </article>
           <article class="role">
-            <div class="when"><b>Kroger</b>General Manager<br>2001 - 2005</div>
-            <div><h3>Operations management</h3><p>Early operations management, team leadership, inventory systems, process improvement, and managing up to 85 associates.</p></div>
+            <div class="when"><b>Kroger</b>General Merchandise Manager<br>2001 - 2005</div>
+            <div>
+              <h3>Operations management</h3>
+              <p>Early operations management, team leadership, inventory systems, process improvement, and managing up
+                to 85 associates. Managed retail location with weekly sales in the 8 figure range. Responsibilities
+                include General merchandise, drug, pharmacy, and seasonal.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -236,39 +604,48 @@
     <section id="systems">
       <div class="wrap">
         <div class="section-head">
-          <h2>Selected systems</h2>
-          <p class="section-note">Circle-specific implementation details are intentionally abstracted. This is the level I am comfortable having on a public page.</p>
+          <h2>Recent Selected Systems</h2>
         </div>
         <div class="system-grid">
           <article class="system card">
             <div class="meta">Circle</div>
             <h3>Community trust and moderation intelligence</h3>
-            <p>Graph-backed evidence, explainable scoring, review queues, dry-run actions, and auditability for abuse, sybil, bot, and low-quality community activity. The point is evidence an operator can inspect and act on.</p>
+            <p>Graph-backed evidence, explainable scoring, review queues, dry-run actions, and auditability for abuse,
+              sybil, bot, and low-quality community activity. Automation based on trusted intelligence backed by graph
+              theory methods.
+            </p>
           </article>
           <article class="system card">
             <div class="meta">Circle</div>
             <h3>Builder feedback and product intelligence</h3>
-            <p>AI-assisted survey/reporting workflows that turn scattered feedback into searchable reports, themes, recommendations, and agent-queryable knowledge. Useful because the data can be read by humans and called by tools.</p>
+            <p>AI-assisted survey/reporting workflows that turn scattered feedback into searchable reports, themes,
+              recommendations, and agent-queryable knowledge. Useful because the data can be read by humans and called
+              by tools.</p>
           </article>
           <article class="system card">
-            <div class="meta">Circle / Arc</div>
+            <div class="meta">Circle</div>
             <h3>Onchain builder intelligence</h3>
-            <p>Systems that connect builders, projects, claims, addresses, contracts, activity, and community KPIs without inflating the numbers. Emphasis is evidence-backed attribution and reporting that survives scrutiny.</p>
+            <p>Systems that connect builders, projects, claims, addresses, contracts, activity, and community KPIs
+              without inflating the numbers. Emphasis is evidence-backed attribution and reporting that survives
+              scrutiny.</p>
           </article>
           <article class="system card">
-            <div class="meta">Stellar Community Fund</div>
+            <div class="meta">Stellar Community Fund/SDF</div>
             <h3>Governance and community tooling</h3>
-            <p>Practical tooling around Discord/GitHub connectors, reputation and role automation, member nomination support, voting-related workflows, and the plumbing required to make ecosystem governance less manual.</p>
+            <p>Practical tooling around Discord/GitHub connectors, reputation and role automation, member nomination
+              support, voting-related workflows, and the plumbing required to make ecosystem governance less manual.</p>
           </article>
           <article class="system card">
             <div class="meta">StellarAtlas</div>
             <h3>Stellar network analytics</h3>
-            <p>Public monitoring and analytics for Stellar validators and organizations: crawlers, APIs, dashboards, notifications, historical/network data, and ecosystem reporting.</p>
+            <p>Public monitoring and analytics for Stellar validators and organizations: crawlers, APIs, dashboards,
+              notifications, historical/network data, and ecosystem reporting.</p>
           </article>
           <article class="system card">
-            <div class="meta">Hoops / OrbitCDP</div>
-            <h3>DeFi and stablecoin architecture</h3>
-            <p>Soroban DeFi analytics, liquidity and risk models, smart-contract architecture, CDP/stablecoin design review, documentation, integration advice, and edge cases around financial systems.</p>
+            <div class="meta">Hoops Finance</div>
+            <h3>DeFi and Stablecoin Risk Analytics</h3>
+            <p>Soroban DeFi analytics, liquidity and risk models, smart-contract architecture, CDP/stablecoin design
+              review, documentation, integration advice, and edge cases around financial systems.</p>
           </article>
         </div>
       </div>
@@ -284,36 +661,56 @@
           <article class="stack-card card">
             <h3>Languages</h3>
             <div class="chips">
-              <span class="chip">TypeScript</span><span class="chip">Rust</span><span class="chip">JavaScript</span><span class="chip">Solidity</span><span class="chip">C++</span><span class="chip">Go</span><span class="chip">Python</span>
+              <span class="chip">TypeScript</span><span class="chip">Rust</span><span
+                class="chip">JavaScript</span><span class="chip">Solidity</span><span class="chip">C++</span><span
+                class="chip">Go</span><span class="chip">Python</span><span class="chip">Strong understanding of low
+                level theory</span>
             </div>
           </article>
           <article class="stack-card card">
             <h3>AI / LLM</h3>
             <div class="chips">
-              <span class="chip">Agents</span><span class="chip">RAG</span><span class="chip">Context graphs</span><span class="chip">Vector embeddings</span><span class="chip">pgvector</span><span class="chip">Neo4j</span><span class="chip">MCP</span><span class="chip">Tool calling</span><span class="chip">Eval loops</span>
+              <span class="chip">Agents</span><span class="chip">RAG</span><span class="chip">Context graphs</span><span
+                class="chip">Vector embeddings</span><span class="chip">pgvector</span><span
+                class="chip">Neo4j</span><span class="chip">MCP</span><span class="chip">Tool calling</span><span
+                class="chip">Eval loops</span><span class="chip">Graph Theory/ Graph Intelligence</span>
             </div>
           </article>
           <article class="stack-card card">
             <h3>Blockchain / fintech</h3>
             <div class="chips">
-              <span class="chip">USDC</span><span class="chip">Arc / EVM</span><span class="chip">Stellar</span><span class="chip">Soroban</span><span class="chip">AMMs</span><span class="chip">Smart contracts</span><span class="chip">Indexers</span><span class="chip">Stablecoins / CDPs</span><span class="chip">DeFi analytics</span>
+              <span class="chip">USDC</span><span class="chip">EVM</span><span class="chip">Stellar</span><span
+                class="chip">Soroban</span><span class="chip">AMMs</span><span class="chip">Smart contracts</span><span
+                class="chip">Indexers</span><span class="chip">Stablecoins / CDPs</span><span class="chip">DeFi
+                analytics</span><span class="chip">DAO's / Governance</span><span class="chip">Arc</span><span
+                class="chip">Privacy</span><span class="chip">TEE</span><span class="chip">Oracles</span>
             </div>
           </article>
           <article class="stack-card card">
             <h3>Data / backend</h3>
             <div class="chips">
-              <span class="chip">Postgres</span><span class="chip">BigQuery</span><span class="chip">GraphQL</span><span class="chip">REST</span><span class="chip">SSE</span><span class="chip">Redis</span><span class="chip">Docker</span><span class="chip">Okta / OIDC</span>
+              <span class="chip">Postgres</span><span class="chip">BigQuery</span><span class="chip">GraphQL</span><span
+                class="chip">REST</span><span class="chip">SSE</span><span class="chip">Redis</span><span
+                class="chip">Docker</span><span class="chip">Okta / OIDC</span><span class="chip">Oauth</span><span
+                class="chip">SAML</span><span class="chip">Active Directory</span><span class="chip">RADIUS</span>
             </div>
           </article>
           <article class="stack-card card">
             <h3>Security / ops</h3>
             <div class="chips">
-              <span class="chip">Threat modeling</span><span class="chip">Identity</span><span class="chip">VPN</span><span class="chip">Firewalls</span><span class="chip">Segmentation</span><span class="chip">Monitoring</span><span class="chip">Dry-run operations</span><span class="chip">Audit trails</span>
+              <span class="chip">Threat modeling</span><span class="chip">Identity</span><span
+                class="chip">VPN</span><span class="chip">Firewalls</span><span class="chip">Segmentation</span><span
+                class="chip">Monitoring</span><span class="chip">Dry-run operations</span><span class="chip">Audit
+                trails</span><span class="chip">Penetration Testing</span><span class="chip">Threat Response</span>
             </div>
           </article>
           <article class="stack-card card">
             <h3>Education / certifications</h3>
-            <p>University of Toledo - Mathematics / Computer Science coursework, degree not completed. Microsoft Certified Systems Engineer and Microsoft Certified Solutions Developer. Historical/expired Cisco, Security+, SonicWall, and VMware certifications.</p>
+            <p>High School Diploma, High School Diploma, 2000 - 2003, 4.5 GPA University of Toledo - Mathematics /
+              Computer Science coursework. (Left to run real businesses in y3) Microsoft
+              Certified Systems Engineer and Microsoft Certified Solutions Developer. Historical/expired Cisco,
+              Security+, SonicWall Security Professional, and VMware Certified Professional 6, CompTIA Security+ ce.,
+              AWS Cloud Architect</p>
           </article>
         </div>
       </div>
@@ -326,8 +723,13 @@
           <p class="section-note">Based in the Toledo, Ohio area. Remote-friendly.</p>
         </div>
         <div class="contact-grid">
-          <div class="contact-card card"><p><strong>Email</strong><br><a href="mailto:tim@bathcabinet.us">tim@bathcabinet.us</a></p></div>
-          <div class="contact-card card"><p><strong>Links</strong><br><a href="https://github.com/silence48">github.com/silence48</a><br><a href="https://www.linkedin.com/in/tim4802">linkedin.com/in/tim4802</a><br><a href="https://stellaratlas.io">stellaratlas.io</a></p></div>
+          <div class="contact-card card">
+            <p><strong>Email</strong><br><a href="mailto:tim@bathcabinet.us">tim4802@gmail.com</a></p>
+          </div>
+          <div class="contact-card card">
+            <p><strong>Links</strong><br><a href="https://github.com/silence48">github.com/silence48</a><br><a
+                href="https://www.linkedin.com/in/tim4802">linkedin.com/in/tim4802</a>
+          </div>
         </div>
       </div>
     </section>
@@ -337,4 +739,5 @@
     <div class="wrap">Timothy Baker - Builder / Founder</div>
   </footer>
 </body>
+
 </html>
